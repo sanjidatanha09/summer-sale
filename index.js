@@ -32,12 +32,12 @@ function handleCLikBtn(target) {
 document.getElementById('input-field').addEventListener('keyup', function (event) {
 
     const Sellproduct = event.target.value;
-    //console.log(text);
     const deletebutton = document.getElementById('btn-update');
-    //&& totalprice > 200
-
+    
     if (Sellproduct === 'SELL200' && total > 200) {
         deletebutton.removeAttribute('disabled');
+        Sellproduct.value='';
+        
 
 
         let discountamount = 0.2;
@@ -50,7 +50,6 @@ document.getElementById('input-field').addEventListener('keyup', function (event
         const finalamount = document.getElementById('distotal');
         finalamount.innerText = FinalTotal.toFixed(2);
 
-
     }
     else {
         deletebutton.setAttribute('disabled', true);
@@ -59,3 +58,26 @@ document.getElementById('input-field').addEventListener('keyup', function (event
 
 })
 
+
+
+document.getElementById('gohome-button').addEventListener('click',function(){
+    const reset1 = document.getElementById('selected-items');
+    reset1.style.display ='none';
+
+    const reset2 = document.getElementById('total');
+    reset2.style.display = 'none';
+
+    const reset3 = document.getElementById('discount');
+    reset3.value = ' ';
+
+    const reset4 = document.getElementById('distotal');
+    reset4.style.display = 'none';
+
+
+
+
+
+
+
+
+})
