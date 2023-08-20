@@ -42,15 +42,15 @@
     <main class=" bg-[#F8F8F8] pb-14">
 
 
-        <section class="max-w-7xl mx-auto flex gap-8">
+        <section class="max-w-7xl mx-auto lg:flex gap-8">
 
-            <section class="w-2/4 lg:w-3/4 max-w-7xl mx-auto">
+            <section class="w-3/4 lg:w-3/4  mx-auto">
 
 
                 <div class="">
 
                     <div class="mb-16">
-                        <h1 class="text-[#111111] text-5xl font-semibold pt-16 ">Kitchenware</h1>
+                        <h1 class="text-[#111111] font-semibold pt-16 text-4xl lg:text-5xl text-center lg:text-start">Kitchenware</h1>
                     </div>
 
                     <div class="grid lg:grid-cols-3 gap-8 ml-6 md:m-0 lg:m-0">
@@ -134,10 +134,10 @@
                 <div class=" ">
 
                     <div class="mb-16">
-                        <h1 class="text-[#111111] text-5xl font-semibold pt-16">Sportswear</h1>
+                        <h1 class="text-[#111111]  font-semibold pt-16 text-4xl lg:text-5xl text-center lg:text-start">Sportswear</h1>
                     </div>
 
-                    <div class="grid md:grid-cols-3 lg:grid-cols-3 gap-8 ml-6 md:m-0 lg:m-0 ">
+                    <div class="grid lg:grid-cols-3 gap-8 ml-6 md:m-0 lg:m-0 ">
 
                         <div class="card bg-base-100 shadow-xl">
                             <figure class="px-10 pt-10 pb-5 bg-[#F8F8F8] mx-5 mt-5">
@@ -218,14 +218,14 @@
 
 
 
-            <section class="w-2/4 lg:w-1/4  pt-44 max-w-7xl mx-auto">
+            <section class="w-3/4 lg:w-1/4  pt-44 max-w-7xl mx-auto">
                 <div class="card w-full bg-base-100 shadow-xl">
                     <div class="card-body">
-                        <h2 class="card-title">Have coupon?</h2>
+                        <h2 id="input-text" class="card-title">Have coupon?</h2>
 
-                        <label class="relative" for="">
-                            <input class="p-3 w-3/4 border-none border-white " type="text" placeholder="Coupon code ">
-                            <button disabled class="p-2  w-1/4 btn-secondary absolute top-0 right-0 bottom-0 text-center btn rounded-r-xl  rounded-l-none">Apply</button>
+                        <label class="relative " for="">
+                            <input id="input-field" class="p-3 w-3/4 border-none border-white " type="text" placeholder="Coupon code ">
+                            <button id="btn-update" disabled class="p-2  w-1/4 btn-secondary absolute top-0 right-0 bottom-0 text-center btn rounded-r-xl  rounded-l-none">Apply</button>
                         </label>
                     </div>
                 </div>
@@ -235,23 +235,24 @@
 
                 <div class="card w-full bg-base-100 shadow-xl ">
                     <div class="card-body ">
-                        <div class="selected-items text-xl font-bold" id="selected-items">
+                        <div class="selected-items text-xl font-bold list-decimal" id="selected-items">
+                    
 
                         </div>
                         <br>
                         
-                        <h1 class="card-title">Total price: <span id="total">00</span></h1>
-                        <h1 class="card-title">Discount : <span>00</span></h1>
-                        <h1 class="card-title">Total: <span>00</span></h1>
+                        <h1 class="card-title">Total price: <span id="total">00.00</span>TK</h1>
+                        <h1  class="card-title">Discount : <span id="discount">00.00</span>TK</h1>
+                        <h1  class="card-title">Total: <span id="distotal">00.00</span>TK</h1>
                     </div>
                     <div class="card-actions w-4/5 mx-auto">
 
-                        <button disabled class="btn btn-secondary w-full relative top-5" id="submit" onclick="my_modal_2.showModal()">
-                            
-                            Make
-                            Purchase
-                        
+                        <button disabled class="btn btn-secondary w-full relative top-5" id="submit-btn" onclick="my_modal_2.showModal() ">Make Purchase
                         </button>
+
+
+                        <!--modal start-->
+                        
                         <dialog id="my_modal_2" class="modal">
                             <form method="dialog" class="modal-box text-center">
                                 <img class="w-1/4 mx-auto mb-5" src="images/congo.png" alt="">
@@ -260,9 +261,6 @@
                                 </p>
 
                                 <button class="btn btn-secondary">Go Home</button>
-
-
-
 
                             </form>
                         </dialog>
