@@ -11,12 +11,17 @@ function handleCLikBtn(target) {
     total = parseFloat(total) + parseFloat(price);
     document.getElementById("total").innerText = total.toFixed(2);
 
+    const applybutton = document.getElementById('btn-update');
+
+    if (total >= 200) {
+        applybutton.removeAttribute('disabled');
+    }
+
     const FinalTotal = total;
     const finalamount = document.getElementById('distotal');
     finalamount.innerText = FinalTotal.toFixed(2);
 
     const deletebutton = document.getElementById('submit-btn');
-    console.log(deletebutton);
 
     if (total > 0) {
         deletebutton.removeAttribute('disabled');
@@ -25,20 +30,22 @@ function handleCLikBtn(target) {
         deletebutton.setAttribute('disabled', true);
     }
 }
-document.getElementById('input-field').addEventListener('keyup', function (event) {
 
-    const Sellproduct = event.target.value;
-    const deletebutton = document.getElementById('btn-update');
 
-    if (Sellproduct === 'SELL200' && total > 200) {
-        deletebutton.removeAttribute('disabled');
-        Sellproduct.value = '';
 
+document.getElementById('btn-update').addEventListener('click', function () {
+
+    const thisapplybutton = document.getElementById('input-field');
+    const inputttTaxt = thisapplybutton.value;
+    thisapplybutton.value = '';
+
+    if (inputttTaxt === 'SELL200') {
+       
         let discountamount = 0.2;
         const totalDiscount = total * discountamount;
         const discountElement = document.getElementById('discount');
         discountElement.innerText = totalDiscount.toFixed(2);
-        totalDiscount.value = '';
+
 
         const FinalTotal = total - totalDiscount;
         const finalamount = document.getElementById('distotal');
@@ -47,7 +54,10 @@ document.getElementById('input-field').addEventListener('keyup', function (event
     else {
         deletebutton.setAttribute('disabled', true);
     }
+
+
 })
+
 function goHome() {
     window.location.reload();
 }
