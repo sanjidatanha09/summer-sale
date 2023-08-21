@@ -9,7 +9,7 @@ function handleCLikBtn(target) {
 
     const price = target.parentNode.childNodes[3].innerText.split(" ")[0];
     total = parseFloat(total) + parseFloat(price);
-    document.getElementById("total").innerText = total;
+    document.getElementById("total").innerText = total.toFixed(2);
 
     const FinalTotal = total;
     const finalamount = document.getElementById('distotal');
